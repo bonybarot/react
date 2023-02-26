@@ -1,0 +1,179 @@
+=>What is React Js?
+
+		-The React.js framework is an open-source JavaScript framework and library developed by Facebook. It’s used for building interactive user interfaces and web applications quickly and efficiently with significantly less code than you would with vanilla JavaScript.
+
+
+
+
+=>What is NPM in React Js?
+
+		-NPM is short for node package manager, an online directory that contains the various already registered open-source packages. NPM modules consume the various functions as a third-party package when installed into an app using the NPM command npm install .
+
+
+
+
+=>What is Role of Node Js in react Js?
+
+		-NodeJS is a framework of JavaScript which is mainly used for working with the backend of our application or building the backend using JavaScript, whereas ReactJS is a JavaScript front-end library. It is mainly used for building the user interface or the frontend of our application
+
+
+
+
+=>What is CLI command In React Js?
+
+		-A command-line interface (CLI) is a text-based user interface (UI) used to run programs, manage computer files and interact with the computer. Command-line interfaces are also called command-line user interfaces, console user interfaces and character user interfaces.
+
+
+
+
+=>What is Components in React Js?
+
+		-Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML. Components come in two types, Class components and Function components, in this tutorial we will concentrate on Function components.
+
+
+
+
+=>What is Header and Content Components in React Js?
+
+		-Headers are compositions that extend standard navbar functionalities. They contain additional components like a jumbotron, sub-navbar, or image covers which serve as a containers for extra navigation elements - usually links, forms, or call-to-action buttons.
+
+
+
+
+=>How to install React Js on Windows, linux Operating System? How 
+to install NPM and How to check version of NPM? 
+
+		-Install Node.js installer for windows. Click on this link. Here install the LTS version (the one present on the left). Once downloaded open NodeJS without disturbing other settings, click on the Next button until it’s completely installed.
+		-Open command prompt  to check whether it is completely installed or not type the command –> node -v
+
+
+
+
+=>How to check version of React Js?
+
+		-Open the console, then run window. React. version .
+		-You can use the below step to identify the "react" and "react-dom".
+		
+		Open DeveloperTool in your browser.
+		Go to Source Tab.
+		Check your appName .js file.
+		Search for "react" or "react-dom" You will find something like below. That will be the version your react-app is using.
+
+
+
+
+=>How to change in components of React Js?
+
+		-There are multiple ways to redirecting from one component to another component in ReactJS.
+			Link. Link is used to manage the navigation and it worked as an anchor tag. ...
+			NavLink. ...
+
+
+
+
+=>How to Create a List View in React Js?
+
+
+import React, { Component } from 'react'
+
+export default class Listsandkeys extends Component {
+  render() {
+
+    const object1 = [
+      {
+        
+        id : 1,
+        firstname: "bony" ,
+        lastname : "barot"
+      },
+      {
+        id : 2,
+      firstname: "ramesh" ,
+      lastname : "barot"
+    }];
+    
+    const component = object1.map((data,key)=>{
+      console.log(data);
+      console.log(data.id);
+      console.log(data.firstname);
+      console.log(data.lastname);
+      
+      return <tr key={key}>
+        
+        <td>{data.id + "   "}</td>
+        <td>{data.firstname}</td>
+        <td>{data.lastname}</td>
+      </tr>
+    })
+    
+
+    return (
+      <>
+
+      <table className='table table-bordered'>
+        <tbody> 
+          <tr>
+          <td><b>id</b></td>
+          <td><b>firstname</b></td>
+          <td><b>lastname</b></td>
+          </tr>
+
+      {component}
+        </tbody>
+      </table>
+      </>
+      
+      )
+    }
+  }
+
+
+
+
+=> Create Increment decrement state change by button click? 
+
+import React, { Component } from 'react';
+
+class State extends Component {
+    btn="";
+    constructor(props) {
+        super(props);
+        this.state ={
+            data:"somthing data...",
+            btn:" change",
+            value : 0 ,
+            onoffbtn : true
+        }
+        
+    }
+   
+    
+    changedata=()=>{
+      this.setState({data: "changed data..."})
+      this.setState({onoff:  "off"})
+    }
+    increment=()=>{
+        this.setState({value : this.state.value+1})
+    }
+    render() {
+       
+        return (
+            <>
+                {this.state.data}
+              <button onClick={this.changedata }>{this.state.btn}</button> 
+              <br />
+              <br />
+              <button onClick={this.increment}>increment</button> 
+              <p>{this.state.value}</p>
+              <button onClick={()=>{ this.setState({value : this.state.value-1})}}>decrement</button>
+              <br />
+              <br />
+              <button onClick={()=>this.setState({onoffbtn : !this.state.onoffbtn })}>{this.state.onoffbtn ? "on":"off"}</button>
+            </>
+        );
+    }
+}
+
+export default State;
+  
+  

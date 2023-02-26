@@ -1,0 +1,23 @@
+=>What is JavaScript Output method?
+
+		-JavaScript can "display" data in different ways: Writing into an HTML element, using innerHTML . Writing into the HTML output using document.write() . Writing into an alert box, using window.alert() . Writing into the browser console, using console.log() .
+
+
+
+
+
+=>How to use JavaScript Output method? 
+
+		-In short, the easiest and most convenient way to see our JavaScript output is to use the console. log() method which shows a message in our web console.
+
+
+
+
+=>How to use JavaScript Events to do all examples? 
+
+
+		-HTML event attributes can execute JavaScript code directly.
+		 HTML event attributes can call JavaScript functions.
+		 You can assign your own event handler functions to HTML elements.
+		 You can prevent events from being sent or being handled.
+		 And more ...		

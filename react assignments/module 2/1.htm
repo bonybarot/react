@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="total()">
+  <table  border="1px ">
+
+        
+           <tr>
+               <td colspan="4">product info</td>
+               <th colspan="2">quantity</th>
+               <th>price (per unit)</th>
+               <th>price (subtotal)</th>
+               <th></th>
+            </tr>
+            
+            <tr>
+             <th colspan="4">fortunata window hardware</th>
+             <th colspan="2" ><input type="number" onchange="subtotal1(),total()" id="input1"></th>
+             <th  id="price1">$29.99</th>
+             <th  id="subtotal1"></th>
+             <th><button style="background-color: orange;" onclick="remove1()">remove</button></th>
+           </tr>
+           
+        <tr>
+            <th colspan="4">woven treliss window hardware</th>
+            <th colspan="2" ><input type="number" id="input2" onchange="subtotal2() , total()"></th>
+            <th >$12.99</th>
+            <th  id="subtotal2"></th>
+            <th><button style="background-color: orange;" onclick="remove2()">remove</button></th>
+          </tr>
+           
+           <tr>
+             <th colspan="4"></th>
+             <th  colspan="2"></th>
+             <th></th>
+             <th id="total"></th>
+             <th></th>
+           </tr>
+           
+       
+        </table>
+        
+      <script>
+        
+        function subtotal1(){
+        
+          var x = document.getElementById("input1").value;
+          s1 = parseInt( document.getElementById("subtotal1").innerHTML= x * 29.99);
+       
+        }
+        function remove1(){
+          document.getElementById("input1").value = 0;
+          var x = document.getElementById("input1").value;
+          document.getElementById("subtotal1").innerHTML= x * 29.99;
+          
+        }
+        function subtotal2(){
+          var x = document.getElementById("input2").value;
+          var s2 =parseInt(document.getElementById("subtotal2").innerHTML= x * 12.99);
+        }
+        function remove2(){
+          document.getElementById("input2").value = 0;
+          var x = document.getElementById("input2").value;
+          document.getElementById("subtotal2").innerHTML= x * 12.99;
+          
+        }
+        function total(){
+   
+          var s1 =parseInt(document.getElementById("subtotal1").innerHTML) ;
+          var  s2 =parseInt(document.getElementById("subtotal2").innerHTML );
+          
+          let s3 = s1+s2;
+          document.getElementById("total").innerHTML = s3;
+                }
+      
+         
+      </script>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html>
+<body>
+
+First Name: <input type="text" id="myText" value="Mickey">
+
+<p>Click the button to display the value of the value attribute of the text field.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myText").value;
+  document.getElementById("demo").innerHTML = x;
+}
+</script>
+
+</body>
+</html> -->
