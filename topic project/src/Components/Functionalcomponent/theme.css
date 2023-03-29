@@ -1,0 +1,31 @@
+.panel-light{
+    height: 200px;
+    width: 200px;
+    background-color: aqua;
+}
+.panel-dark{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(42, 40, 40);
+}
+
+.box-red{
+    height: 50px;
+    width: 200px;
+    background-color:red;
+
+}
+
+.box-blue{
+    height: 50px;
+    width: 200px;
+    background-color: blue;
+
+}
+
+.box-green{
+    height: 50px;
+    width: 200px;
+    background-color: green;
+
+}
