@@ -40,12 +40,12 @@ const LoginPage = () => {
         <Card.Body>
           <h2 className='text-center'> Log In</h2>
           {err && <Alert variant='danger'>{err}</Alert>}
-            <Form onSubmit={handlesubmit}>
+            <Form onSubmit={handlesubmit} autoComplete="off">
               <Form.Group id="email">
                   <Form.Label>
                     Email
                   </Form.Label>
-                  <Form.Control type="email" ref={emailRef} required />
+                  <Form.Control type="email" ref={emailRef} required  />
                 </Form.Group>
               <Form.Group id="password">
                   <Form.Label>

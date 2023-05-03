@@ -8,7 +8,7 @@ const Updateprofile = () => {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordconfirmRef = useRef();
-  const {currentuser,updateEmail,updatePassword } = useAuth()
+  const {currentuser,UpdateEmail,updatePass } = useAuth()
   const [err, seterr] = useState("")
   const [message, setmessage] = useState("")
   const [loading, setloading] = useState(false)
@@ -20,16 +20,21 @@ const Updateprofile = () => {
       return seterr("passwords don't match")
     }
     
-    const promises = []
+    const promises = [];
+   
     if(emailRef.current.value !== currentuser.email){
-        promises.push(updateEmail(emailRef.current.value))
-    }if(passwordRef != null){
-        
-        promises.push(updatePassword(passwordRef.current.value))
+        promises.push(UpdateEmail(emailRef.current.value))
+        // console.log(emailRef.current.value,currentuser.email)
+    }
+     if(passwordRef.current.value !== ""){
+      promises.push(updatePass(passwordRef.current.value))
     }
     Promise.all(promises).then(()=>{
-        navigate("/")
-    }).catch(()=>{
+      navigate("/")
+      alert("profile updated successfully")
+      window.location.reload()
+    }).catch((er)=>{
+      console.log(er)
         seterr("failed to update")
     }).finally(()=>{
         setloading(false)

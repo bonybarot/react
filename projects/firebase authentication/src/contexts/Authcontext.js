@@ -28,11 +28,11 @@ export const AuthProvider  = ({children}) => {
     function Resetpassword(email){
         return sendPasswordResetEmail(getAuth(),email);
     }
-    function updateEmail(email){
-        return currentuser.updateEmail(email);
+    function UpdateEmail(email){
+        return updateEmail(auth.currentUser,email);
     }
-    function updatePassword(password){
-        return currentuser.updatePassword(password);
+    function updatePass(password){
+        return updatePassword(auth.currentUser,password);
     }
 
     useEffect(() => {
@@ -50,8 +50,8 @@ export const AuthProvider  = ({children}) => {
         login,
         logout,
         Resetpassword,
-        updateEmail,
-        updatePassword
+        UpdateEmail,
+        updatePass
     }
     return (
         <AuthContext.Provider value={value}>
